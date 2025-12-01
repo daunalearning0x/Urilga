@@ -2,25 +2,31 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Video</title>
+  <title>Vertical Video Autoplay</title>
   <style>
     body {
       margin: 0;
       padding: 0;
+      background: #000;
       display: flex;
       justify-content: center;
-      background: #000;
+      align-items: center;
+      height: 100vh;
     }
     video {
-      width: auto;
-      height: 100vh;  /* дэлгэцийн өндрөөр таарна */
       max-width: 100%;
+      max-height: 100vh;
     }
   </style>
 </head>
 <body>
 
-  <video controls playsinline>
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+  >
     <source src="video.mp4" type="video/mp4">
   </video>
 
