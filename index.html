@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Vertical Video Autoplay</title>
+  <title>Video Autoplay + Unmute</title>
   <style>
     body {
       margin: 0;
@@ -12,23 +12,44 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      position: relative;
     }
+
     video {
       max-width: 100%;
       max-height: 100vh;
+    }
+
+    #unmuteBtn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <video 
-    autoplay 
-    muted 
-    loop 
-    playsinline 
-  >
+  <video id="vid" autoplay muted playsinline>
     <source src="video.mp4" type="video/mp4">
   </video>
+
+  <button id="unmuteBtn" onclick="unmute()">🔊 Unmute</button>
+
+  <script>
+    function unmute() {
+      const v = document.getElementById('vid');
+      v.muted = false;
+      v.play();
+      document.getElementById('unmuteBtn').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
