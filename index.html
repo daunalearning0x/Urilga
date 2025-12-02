@@ -42,14 +42,14 @@
 
   <button id="unmuteBtn" onclick="unmute()">🔊 Unmute</button>
 
-  <script>
-    function unmute() {
-      const v = document.getElementById('vid');
-      v.muted = false;
-      v.play();
-      document.getElementById('unmuteBtn').style.display = 'none';
-    }
-  </script>
-
+<script>
+function unmute() {
+    const v = document.getElementById("vid");
+    v.muted = false;
+    v.volume = 1.0;   // desktop-ийн cached mute-г хүчээр арилгана
+    v.play();
+    document.getElementById("unmuteBtn").style.display = "none";
+}
+</script>
 </body>
 </html>
